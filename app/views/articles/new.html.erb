@@ -1,0 +1,31 @@
+<h1> Create an Artices </h1>
+<%if @article.errors.any? %>
+<ul>
+  <% @article.errors.full_messages.each do |msg| %>
+
+  <li><%= msg %> </li>
+   <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |z| %>
+
+<p>
+    <%= z.label :title%><br/>
+    <%= z.text_field :title %>
+</p>
+<p>
+    <%= z.label :description%> <br/>
+    <%= z.text_field :description%>
+</p>
+
+<p>
+  <%= z.submit%>
+</p>
+
+
+
+
+<%end %>
+  
+<%=link_to "Back to Artices",articles_path%>
